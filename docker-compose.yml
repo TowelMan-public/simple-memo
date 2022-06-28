@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+  #mysql
+  mysql:
+    image: mysql:8.0.20
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: simple-memo
+      MYSQL_USER: simple-memo-root
+      MYSQL_PASSWORD: password
+      TZ: UTC
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./test-db:/docker-entrypoint-initdb.d
+
+  #development-web-server
+  development-web-server:
+    build:
+      context: .
+      dockerfile: server-docker-file
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    environment:
+      WAIT_HOSTS: mysql:3306
+    volumes:
+      - type: bind
+        source: ./
+        target: /app
+    entrypoint: sh run.sh
+
+volumes:
+  db_data:
