@@ -1,0 +1,300 @@
+.body {
+  width: 100%;
+  height: 100vh;
+
+  background: #eff3f1;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 30px;
+
+  width: 100%;
+  height: 70px;
+
+  background: linear-gradient(90.16deg, #b3def0 16.02%, #f3fbff 100%);
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.header > h1 {
+  width: auto;
+  height: auto;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 39px;
+  color: #000000;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.hamburger_menu_button {
+  display: none;
+}
+
+.hamburger_menu_button {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background: #b3c4f0;
+  border-radius: 10px;
+}
+
+.rectangle_1,
+.rectangle_2,
+.rectangle_3 {
+  position: absolute;
+  left: 4px;
+  width: 41px;
+  height: 4px;
+
+  background: #5b5b5b;
+  border-radius: 3px;
+}
+
+.rectangle_1 {
+  top: 8px;
+}
+
+.rectangle_2 {
+  top: 18px;
+}
+
+.rectangle_3 {
+  top: 28px;
+}
+
+.hamburger_menu_button > .text {
+  position: absolute;
+  top: 35px;
+  left: 6px;
+
+  width: 38px;
+  height: 10px;
+
+  font-family: "Hiragino Kaku Gothic StdN";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 10px;
+  line-height: 15px;
+  text-align: center;
+  text-decoration-line: underline;
+
+  color: #000000;
+}
+
+.container_outer {
+  width: 100%;
+  height: calc(100% - 100px);
+
+  /*z-index*/
+  position: relative;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.container {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+
+  /*z-index in .container_outer*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger_menu {
+  opacity: 0;
+  display: none;
+
+  /* Auto layout */
+  /*if hamburger_menu showed, display: flex;*/
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+
+  width: 100%;
+  height: 100%;
+
+  /*z-index in .container_outer*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+  background: rgba(86, 86, 86, 0.24);
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.hamburger_menu_view {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 10px;
+
+  /*TODO hug*/
+  width: auto;
+  height: auto;
+
+  background: #ffffff;
+  border-radius: 30px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.hamburger_menu_close_button {
+  position: relative;
+  width: 50px;
+  height: 50px;
+
+  background: #c12323;
+  border-radius: 5px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.hamburger_menu_close_button > .rectangle_1 {
+  position: absolute;
+  width: 50px;
+  height: 10px;
+  /*left: calc(50% - 50px / 2 + 4px);
+  top: calc(50% - 10px / 2 + 18.36px);*/
+  top: calc(100% / 2 - 5px);
+  left: 0;
+
+  background: #7b7b7b;
+  border-radius: 10px;
+  transform: matrix(0.79, -0.79, 0.51, 0.76, 0, 0);
+}
+
+.hamburger_menu_close_button > .rectangle_2 {
+  position: absolute;
+  width: 50px;
+  height: 10px;
+  /*left: calc(50% - 50px / 2 + 10.09px);
+  top: calc(50% - 10px / 2 - 17px);*/
+  top: calc(100% / 2 - 5px);
+  left: 0;
+
+  background: #7b7b7b;
+  border-radius: 10px;
+  transform: matrix(0.79, 0.79, -0.51, 0.76, 0, 0);
+}
+
+.hamburger_menu_container {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px;
+
+  width: auto;
+  height: auto;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.hamburger_menu_contents {
+  width: 400px;
+  height: 370px;
+
+  background: #29e226;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.footer {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+
+  width: 100%;
+  height: 30px;
+
+  background: #e0dede;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.footer > .text {
+  width: auto;
+  height: auto;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #383838;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+/*mobile mode*/
+@media (max-width: 767px) {
+  .header {
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  .hamburger_menu_button {
+    display: block;
+  }
+}
