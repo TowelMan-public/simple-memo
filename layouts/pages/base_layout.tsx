@@ -61,6 +61,16 @@ function BaseLayout(
               ></div>
             </div>
           </div>
+
+          <div className={styles.progress_ring_container}>
+            <div className={styles.progress_ring}>
+              <div className={styles.progress_ring_font}>
+                <div className={styles.progress_ring_font_inner_1}></div>
+                <div className={styles.progress_ring_font_inner_2}></div>
+              </div>
+              <div className={styles.progress_ring_background}></div>
+            </div>
+          </div>
         </div>
 
         <footer className={styles.footer}>

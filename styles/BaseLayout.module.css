@@ -265,6 +265,124 @@
   flex-grow: 0;
 }
 
+.progress_ring_container {
+  display: none;
+
+  /* Auto layout */
+  /*if progress_ring_container showed, display: flex;*/
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+
+  width: 100%;
+  height: 100%;
+
+  /*z-index in .container_outer*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+
+  background: rgba(86, 86, 86, 0.24);
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.progress_ring {
+  position: relative;
+  width: 200px;
+  height: 200px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.progress_ring_font {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  animation: progress_ring_font_animation 1.5s infinite linear;
+}
+
+@keyframes progress_ring_font_animation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  12.5% {
+    transform: rotate(45deg);
+  }
+
+  25% {
+    transform: rotate(90deg);
+  }
+
+  37.5% {
+    transform: rotate(135deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  62.5% {
+    transform: rotate(225deg);
+  }
+
+  75% {
+    transform: rotate(270deg);
+  }
+
+  87.5% {
+    transform: rotate(315deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.progress_ring_font_inner_1,
+.progress_ring_font_inner_2 {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 50%;
+  height: 50%;
+
+  border-radius: 0 100% 0 0/0 100% 0 0;
+  border-top: 28px solid #1e69d9;
+  border-right: 28px solid #1e69d9;
+}
+
+.progress_ring_font_inner_2 {
+  left: 25%;
+  top: -10.4%;
+  transform: rotate(-45deg);
+}
+
+.progress_ring_background {
+  border-radius: 50%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+
+  border: 28px solid rgba(121, 215, 255, 0.25);
+}
+
 .footer {
   /* Auto layout */
   display: flex;
