@@ -8,4 +8,6 @@ jQuery(function () {
       );
     });
   }
+
+  openProgressRing();
 });

@@ -62,7 +62,15 @@ function BaseLayout(
             </div>
           </div>
 
-          <div className={styles.progress_ring_container}>
+          <div
+            id="progress_ring_container"
+            className={styles.progress_ring_container}
+          >
+            <input
+              id="is_progress_ring_showed"
+              defaultValue={0}
+              className={styles.none}
+            />
             <div className={styles.progress_ring}>
               <div className={styles.progress_ring_font}>
                 <div className={styles.progress_ring_font_inner_1}></div>
