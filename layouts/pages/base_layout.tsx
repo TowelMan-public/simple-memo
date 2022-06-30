@@ -5,39 +5,60 @@ import styles from "../../styles/BaseLayout.module.css";
 
 function BaseLayout(
   content: JSX.Element,
-  defaultHamburgerMenuContents: JSX.Element | null = null
+  defaultHamburgerMenuContent: JSX.Element | null = null
 ): JSX.Element {
+  //hamburgerMenuButton
+  var hamburgerMenuButton: JSX.Element;
+  if (defaultHamburgerMenuContent === null) {
+    hamburgerMenuButton = (
+      <div className={styles.hamburger_menu_button_hide}></div>
+    );
+  } else {
+    hamburgerMenuButton = (
+      <div id="hamburger_menu_button" className={styles.hamburger_menu_button}>
+        <div className={styles.rectangle_1}></div>
+        <div className={styles.rectangle_2}></div>
+        <div className={styles.rectangle_3}></div>
+        <span className={styles.text}>MENU</span>
+      </div>
+    );
+  }
+
   return (
     <div>
       <Head>
         <title>シンプルメモ</title>
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-        <Script src="https://code.jquery.com/jquery-3.5.1.min.js"></Script>
       </Head>
 
       <div className={styles.body}>
+        <Script src="https://code.jquery.com/jquery-3.5.1.min.js"></Script>
         <header className={styles.header}>
           <h1>シンプルメモ</h1>
-          <div className={styles.hamburger_menu_button}>
-            <div className={styles.rectangle_1}></div>
-            <div className={styles.rectangle_2}></div>
-            <div className={styles.rectangle_3}></div>
-            <span className={styles.text}>MENU</span>
-          </div>
+          {hamburgerMenuButton}
         </header>
 
         <div className={styles.container_outer}>
           <div className={styles.container}>{content}</div>
 
-          <div className={styles.hamburger_menu}>
+          <div id="hamburger_menu" className={styles.hamburger_menu}>
+            <input
+              id="is_hamburger_menu_showed"
+              defaultValue={0}
+              className={styles.none}
+            />
             <div className={styles.hamburger_menu_view}>
-              <div className={styles.hamburger_menu_close_button}>
+              <div
+                id="hamburger_menu_close_button"
+                className={styles.hamburger_menu_close_button}
+              >
                 <div className={styles.rectangle_1}></div>
                 <div className={styles.rectangle_2}></div>
               </div>
-              <div className={styles.hamburger_menu_container}>
-                <div className={styles.hamburger_menu_contents}></div>
-              </div>
+              <div
+                id="hamburger_menu_container"
+                className={styles.hamburger_menu_container}
+              ></div>
             </div>
           </div>
         </div>
@@ -45,6 +66,18 @@ function BaseLayout(
         <footer className={styles.footer}>
           <span className={styles.text}>&copy; Towelman. 2022.</span>
         </footer>
+
+        <div id="default_hamburger_menu_content_outer" className={styles.none}>
+          <div
+            id="default_hamburger_menu_content"
+            className={styles.default_hamburger_menu_content}
+          >
+            {defaultHamburgerMenuContent}
+          </div>
+        </div>
+
+        <Script src="/javascript/compornent/base_layout.js"> </Script>
+        <Script src="/javascript/page/base_layout.js"> </Script>
       </div>
     </div>
   );
