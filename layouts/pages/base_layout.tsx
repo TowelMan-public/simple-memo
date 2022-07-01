@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Script from "next/script";
 import styles from "../../styles/BaseLayout.module.css";
+import AjaxErrorHamburgerMenu from "../compornent/AjaxErrorHamburgerMenu";
 
 function BaseLayout(
   content: JSX.Element,
@@ -95,10 +96,9 @@ function BaseLayout(
           </div>
         </div>
 
-        <div
-          id="base_layout_hamburger_menu_contents_outer"
-          className={styles.none}
-        ></div>
+        <div id="ajax_error_hambueger_menu_outer" className={styles.none}>
+          <AjaxErrorHamburgerMenu id="ajax_error_hambueger_menu"></AjaxErrorHamburgerMenu>
+        </div>
         <Script src="/javascript/page/base_layout.js"> </Script>
       </div>
     </div>

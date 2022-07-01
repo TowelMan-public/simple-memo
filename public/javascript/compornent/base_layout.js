@@ -6,13 +6,13 @@ function openHumburgerMenu(contentId, contentOuterId) {
   ) {
     $("#" + contentId).prependTo("#hamburger_menu_container");
     $("#hamburger_menu_close_button").click(function () {
-      closeHumburgerMenuShow(contentId, contentOuterId);
+      closeHumburgerMenu(contentId, contentOuterId);
     });
     $("#hamburger_menu").css("display", "flex");
   }
 }
 
-function closeHumburgerMenuShow(contentId = null, contentOuterId = null) {
+function closeHumburgerMenu(contentId = null, contentOuterId = null) {
   let hamburgerMenuCloseButton = $("#hamburger_menu_close_button");
   if (contentId !== null && contentOuterId !== null) {
     $("#hamburger_menu").css("display", "");
@@ -32,4 +32,13 @@ function openProgressRing() {
 function closeProgressRing() {
   $("#is_progress_ring_showed").val(0);
   $("#progress_ring_container").css("display", "");
+}
+
+function showAjaxErrorHamburgerMenu() {
+  closeProgressRing();
+  closeHumburgerMenu();
+  openHumburgerMenu(
+    "ajax_error_hambueger_menu",
+    "ajax_error_hambueger_menu_outer"
+  );
 }

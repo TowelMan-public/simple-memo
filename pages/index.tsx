@@ -10,8 +10,7 @@ const Home: NextPage = () => {
       <Button.yes>test</Button.yes>
       <Button.no>test</Button.no>
       helow world
-    </div>,
-    <AjaxErrorHamburgerMenu></AjaxErrorHamburgerMenu>
+    </div>
   );
 };
 
