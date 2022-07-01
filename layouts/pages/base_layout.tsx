@@ -33,6 +33,7 @@ function BaseLayout(
 
       <div className={styles.body}>
         <Script src="https://code.jquery.com/jquery-3.5.1.min.js"></Script>
+        <Script src="/javascript/compornent/base_layout.js"> </Script>
         <header className={styles.header}>
           <h1>シンプルメモ</h1>
           {hamburgerMenuButton}
@@ -94,7 +95,10 @@ function BaseLayout(
           </div>
         </div>
 
-        <Script src="/javascript/compornent/base_layout.js"> </Script>
+        <div
+          id="base_layout_hamburger_menu_contents_outer"
+          className={styles.none}
+        ></div>
         <Script src="/javascript/page/base_layout.js"> </Script>
       </div>
     </div>
