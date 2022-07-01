@@ -1,0 +1,159 @@
+.text {
+  width: fit-content;
+  height: auto;
+
+  font-family: "Inter";
+  font-style: normal;
+
+  color: #000000;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.comannd_button,
+.yes_button,
+.no_button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+  width: fit-content;
+  height: auto;
+}
+
+.comannd_button {
+  background: linear-gradient(
+      90deg,
+      rgba(229, 242, 238, 0.2) 2.08%,
+      rgba(136, 213, 245, 0.2) 50%,
+      rgba(229, 242, 238, 0.2) 96.87%
+    ),
+    linear-gradient(
+      180deg,
+      #e5f2ee 0%,
+      #88d5f5 51.04%,
+      #e5f2ee 99.99%,
+      #ffffff 100%,
+      #e5f2ee 100%
+    );
+  transition: 1s;
+}
+
+.comannd_button:hover {
+  background: linear-gradient(
+      90deg,
+      rgba(198, 234, 250, 0.25) 2.08%,
+      rgba(175, 220, 239, 0.25) 50%,
+      rgba(241, 250, 247, 0.25) 96.87%
+    ),
+    linear-gradient(
+      180deg,
+      #f1faf7 0%,
+      #c6eafa 51.04%,
+      #e5f2ee 99.99%,
+      #ffffff 100%,
+      #e5f2ee 100%,
+      #f1faf7 100%
+    );
+  transition: 1s;
+}
+
+.comannd_button > .text {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.yes_button {
+  background: linear-gradient(
+      90deg,
+      rgba(227, 248, 253, 0.2) 2.08%,
+      rgba(51, 156, 252, 0.2) 50%,
+      rgba(227, 248, 253, 0.2) 96.87%
+    ),
+    linear-gradient(
+      180deg,
+      #e3f8fd 0%,
+      #339cfc 51.04%,
+      #ffffff 99.98%,
+      #e5f2ee 99.99%,
+      #e3f8fd 100%
+    );
+  transition: 1s;
+}
+
+.yes_button:hover {
+  background: linear-gradient(
+      90deg,
+      rgba(0, 133, 255, 0.25) 2.08%,
+      rgba(0, 133, 255, 0.25) 50%,
+      rgba(0, 133, 255, 0.25) 96.87%
+    ),
+    linear-gradient(
+      180deg,
+      #60aec0 0%,
+      #0085ff 51.04%,
+      #ffffff 99.98%,
+      #e5f2ee 99.99%,
+      #60aec0 100%
+    );
+  transition: 1s;
+}
+
+.yes_button > .text {
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 31px;
+  transition: 1s;
+}
+
+.yes_button:hover > .text {
+  color: #ffffff;
+  transition: 1s;
+}
+
+.no_button {
+  background: linear-gradient(
+      90deg,
+      rgba(240, 252, 255, 0.2) 2.08%,
+      rgba(207, 248, 251, 0.2) 50%,
+      rgba(240, 252, 255, 0.2) 96.87%
+    ),
+    linear-gradient(
+      180deg,
+      #f0fcff 0%,
+      #cff8fb 51.04%,
+      #ffffff 99.98%,
+      #e5f2ee 99.99%,
+      #f0fcff 100%
+    );
+  transition: 1s;
+}
+
+.no_button:hover {
+  background: linear-gradient(
+      90deg,
+      rgba(184, 241, 255, 0.2) 2.08%,
+      rgba(175, 219, 243, 0.2) 50%,
+      rgba(184, 241, 255, 0.2) 96.87%
+    ),
+    linear-gradient(
+      180deg,
+      #b8f1ff 0%,
+      #afdbf3 51.04%,
+      #ffffff 99.98%,
+      #e5f2ee 99.99%,
+      #b8f1ff 100%
+    );
+  transition: 1s;
+}
+
+.no_button > .text {
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 31px;
+}
