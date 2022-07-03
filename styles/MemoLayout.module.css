@@ -119,6 +119,7 @@
   background: #ffffff;
   border: 3px solid #d0d0d0;
   border-radius: 50px;
+  transition: 1s;
 
   /* Inside auto layout */
   flex: none;
@@ -128,24 +129,42 @@
   position: relative;
 }
 
+.memo_item_add_button:hover {
+  transition: 1s;
+  background: #0574d5;
+  border-color: white;
+}
+
 .memo_item_add_button > .rectangle_1 {
   position: absolute;
   width: 3px;
   height: 16px;
   left: 13px;
-  top: 7.5px;
+  top: 7px;
 
   background: #d9d9d9;
+  transition: 1s;
+}
+
+.memo_item_add_button:hover > .rectangle_1 {
+  background: white;
+  transition: 1s;
 }
 
 .memo_item_add_button > .rectangle_2 {
   position: absolute;
   width: 17px;
   height: 3px;
-  left: 6.5px;
-  top: 14px;
+  left: 6px;
+  top: 13.25px;
 
   background: #d9d9d9;
+  transition: 1s;
+}
+
+.memo_item_add_button:hover > .rectangle_1 {
+  background: white;
+  transition: 1s;
 }
 
 .memo_item_list {
@@ -184,6 +203,22 @@
   border-radius: 10px;
 }
 
+.memo_item:hover {
+  background: #b7eaed;
+}
+
+.memo_item_selected {
+  background: #01f2ff;
+  border: 2px solid #0b0e6f;
+  transition: 1s;
+}
+
+.memo_item_selected:hover {
+  transition: 1s;
+  background-color: #c6f5f8;
+  border-color: #0006a7;
+}
+
 .memo_item_title {
   width: calc(100% - 43px);
   height: auto;
@@ -212,6 +247,7 @@
   width: 28px;
   height: 28px;
 
+  transition: 1s;
   background: #ffffff;
   border: 3px solid #d0d0d0;
   border-radius: 28px;
@@ -224,6 +260,12 @@
   position: relative;
 }
 
+.memo_item_delete_button:hover {
+  background: red;
+  border-color: white;
+  transition: 1s;
+}
+
 .memo_item_delete_button > .rectangle_1 {
   position: absolute;
   width: 12px;
@@ -231,7 +273,13 @@
   left: 5px;
   top: 10.5px;
 
+  transition: 1s;
   background: #d9d9d9;
+}
+
+.memo_item_delete_button:hover > .rectangle_1 {
+  background: white;
+  transition: 1s;
 }
 
 .memo {
