@@ -185,6 +185,7 @@
   /*TODO hug*/
   width: auto;
   height: auto;
+  max-height: 100%;
 
   background: #ffffff;
   border-radius: 30px;
@@ -258,11 +259,17 @@
 
   width: auto;
   height: auto;
+  max-height: calc(100% - 60px);
 
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
+}
+
+.default_hamburger_menu_content {
+  height: auto;
+  max-height: 100%;
 }
 
 .progress_ring_container {

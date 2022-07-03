@@ -3,7 +3,7 @@
   padding: 5px 5px;
 
   width: 100%;
-  height: max-content;
+  height: 100%;
   overflow-y: scroll;
   /* for IE, Edge */
   -ms-overflow-style: none;

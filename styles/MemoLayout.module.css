@@ -423,11 +423,17 @@
     padding: 5px;
   }
 
-  .memo_list {
+  .memo_list,
+  .comannd_bar {
     display: none;
   }
 
-  .comannd_bar {
-    display: none;
+  .memo_list_in_hamburger_menu,
+  .comannd_bar_in_hamburger_menu {
+    display: flex;
+  }
+
+  .memo_list_in_hamburger_menu {
+    height: 100%;
   }
 }
