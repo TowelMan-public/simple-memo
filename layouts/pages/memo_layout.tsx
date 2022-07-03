@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Script from "next/script";
 import style from "../../styles/MemoLayout.module.css";
 import Button from "../compornent/Button";
+import MemoItemList from "../compornent/MemoItemList";
 import BaseLayout from "./base_layout";
 
 function MemoLayout(): JSX.Element {
@@ -23,100 +24,7 @@ function MemoLayout(): JSX.Element {
               <div className={style.rectangle_2} />
             </div>
           </div>
-          <div className={style.memo_item_list}>
-            <div className={style.memo_item + " " + style.memo_item_selected}>
-              <div className={style.memo_item_title}>
-                たとえ君が変わろうとも僕が変わろうとも
-              </div>
-              <div className={style.memo_item_delete_button}>
-                <div className={style.rectangle_1} />
-              </div>
-            </div>
-            <div className={style.memo_item}>
-              <div className={style.memo_item_title}>title</div>
-              <div className={style.memo_item_delete_button}>
-                <div className={style.rectangle_1} />
-              </div>
-            </div>
-            <div className={style.memo_item}>
-              <div className={style.memo_item_title}>title</div>
-              <div className={style.memo_item_delete_button}>
-                <div className={style.rectangle_1} />
-              </div>
-            </div>
-            <div className={style.memo_item}>
-              <div className={style.memo_item_title}>title</div>
-              <div className={style.memo_item_delete_button}>
-                <div className={style.rectangle_1} />
-              </div>
-            </div>
-            <div className={style.memo_item}>
-              <div className={style.memo_item_title}>title</div>
-              <div className={style.memo_item_delete_button}>
-                <div className={style.rectangle_1} />
-              </div>
-            </div>
-            <div className={style.memo_item}>
-              <div className={style.memo_item_title}>title</div>
-              <div className={style.memo_item_delete_button}>
-                <div className={style.rectangle_1} />
-              </div>
-            </div>
-            <div className={style.memo_item}>
-              <div className={style.memo_item_title}>title</div>
-              <div className={style.memo_item_delete_button}>
-                <div className={style.rectangle_1} />
-              </div>
-            </div>
-            <div className={style.memo_item}>
-              <div className={style.memo_item_title}>title</div>
-              <div className={style.memo_item_delete_button}>
-                <div className={style.rectangle_1} />
-              </div>
-            </div>
-            <div className={style.memo_item}>
-              <div className={style.memo_item_title}>title</div>
-              <div className={style.memo_item_delete_button}>
-                <div className={style.rectangle_1} />
-              </div>
-            </div>
-            <div className={style.memo_item}>
-              <div className={style.memo_item_title}>title</div>
-              <div className={style.memo_item_delete_button}>
-                <div className={style.rectangle_1} />
-              </div>
-            </div>
-            <div className={style.memo_item}>
-              <div className={style.memo_item_title}>title</div>
-              <div className={style.memo_item_delete_button}>
-                <div className={style.rectangle_1} />
-              </div>
-            </div>
-            <div className={style.memo_item}>
-              <div className={style.memo_item_title}>title</div>
-              <div className={style.memo_item_delete_button}>
-                <div className={style.rectangle_1} />
-              </div>
-            </div>
-            <div className={style.memo_item}>
-              <div className={style.memo_item_title}>title</div>
-              <div className={style.memo_item_delete_button}>
-                <div className={style.rectangle_1} />
-              </div>
-            </div>
-            <div className={style.memo_item}>
-              <div className={style.memo_item_title}>title</div>
-              <div className={style.memo_item_delete_button}>
-                <div className={style.rectangle_1} />
-              </div>
-            </div>
-            <div className={style.memo_item}>
-              <div className={style.memo_item_title}>title</div>
-              <div className={style.memo_item_delete_button}>
-                <div className={style.rectangle_1} />
-              </div>
-            </div>
-          </div>
+          {MemoItemList()}
         </div>
         <div className={style.memo}>
           <div className={style.memo_title_bar}>

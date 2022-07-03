@@ -1,0 +1,17 @@
+.memo_item_list {
+  box-sizing: border-box;
+  padding: 5px 5px;
+
+  width: 100%;
+  height: max-content;
+  overflow-y: scroll;
+  /* for IE, Edge */
+  -ms-overflow-style: none;
+  /* for Firefox */
+  scrollbar-width: none;
+}
+
+/* for Chrome, Safari */
+.memo_item_list::-webkit-scrollbar {
+  display: none;
+}
