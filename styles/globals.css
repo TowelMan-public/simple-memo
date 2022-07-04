@@ -12,3 +12,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.none {
+  display: none !important;
+}

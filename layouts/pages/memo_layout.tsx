@@ -25,23 +25,36 @@ function MemoLayout(): JSX.Element {
               <div className={style.rectangle_2} />
             </div>
           </div>
-          {MemoItemList()}
+          <div id="memo_item_list_outer" className={style.memo_item_list_outer}>
+            {MemoItemList()}
+          </div>
         </div>
         <div className={style.memo}>
           <div className={style.memo_title_bar}>
-            <textarea className={style.memo_title_bar_title}>
+            <textarea
+              id="memo_title_bar_title"
+              className={style.memo_title_bar_title}
+              maxlength="50"
+            >
               title なんか長いタイトルにしたいんですけどどうですか？
             </textarea>
             <div
-              id="memo_delete_button"
+              id="memo_title_bar_delete_button"
               className={style.memo_item_delete_button}
             >
               <div className={style.rectangle_1} />
             </div>
           </div>
-          <textarea className={style.memo_content} />
+          <textarea
+            id="memo_content"
+            className={style.memo_content}
+            maxlength="1000"
+          />
         </div>
       </div>
+      <Script src="/javascript/compornent/memo_layout.js"> </Script>
+      <Script src="/javascript/page/memo_layout.js"> </Script>
+      <Script src="/javascript/page/memo_hamburger_menu.js"> </Script>
     </div>,
 
     //hamburger menu
@@ -64,12 +77,18 @@ function MemoLayout(): JSX.Element {
       >
         <div className={style.memo_list_comannd_bar}>
           <div className={style.memo_list_comannd_bar_title}>一覧</div>
-          <div id="memo_item_add_button" className={style.memo_item_add_button}>
+          <div
+            id="humburger_menu_memo_item_add_button"
+            className={style.memo_item_add_button}
+          >
             <div className={style.rectangle_1} />
             <div className={style.rectangle_2} />
           </div>
         </div>
-        {MemoItemList()}
+        <div
+          id="humburger_menu_memo_item_list_outer"
+          className={style.memo_item_list_outer}
+        ></div>
       </div>
     </div>
   );

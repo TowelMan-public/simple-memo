@@ -40,6 +40,15 @@ function BaseLayout(
           {hamburgerMenuButton}
         </header>
 
+        <div id="default_hamburger_menu_content_outer" className={styles.none}>
+          <div
+            id="default_hamburger_menu_content"
+            className={styles.default_hamburger_menu_content}
+          >
+            {defaultHamburgerMenuContent}
+          </div>
+        </div>
+
         <div className={styles.container_outer}>
           <div className={styles.container}>{content}</div>
 
@@ -86,15 +95,6 @@ function BaseLayout(
         <footer className={styles.footer}>
           <span className={styles.text}>&copy; Towelman. 2022.</span>
         </footer>
-
-        <div id="default_hamburger_menu_content_outer" className={styles.none}>
-          <div
-            id="default_hamburger_menu_content"
-            className={styles.default_hamburger_menu_content}
-          >
-            {defaultHamburgerMenuContent}
-          </div>
-        </div>
 
         <div id="ajax_error_hambueger_menu_outer" className={styles.none}>
           <AjaxErrorHamburgerMenu id="ajax_error_hambueger_menu"></AjaxErrorHamburgerMenu>

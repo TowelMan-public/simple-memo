@@ -167,101 +167,9 @@
   transition: 1s;
 }
 
-.memo_item {
-  box-sizing: border-box;
-
-  /* Auto layout */
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 10px;
-  gap: 15px;
-
+.memo_item_list_outer {
+  height: calc(100% - 52px);
   width: 100%;
-  height: 50px;
-
-  background: #97e9ee;
-  border-top: 2px solid #b3c8f0;
-  border-radius: 10px;
-}
-
-.memo_item:hover {
-  background: #b7eaed;
-}
-
-.memo_item_selected {
-  background: #01f2ff;
-  border: 2px solid #0b0e6f;
-  transition: 1s;
-}
-
-.memo_item_selected:hover {
-  transition: 1s;
-  background-color: #c6f5f8;
-  border-color: #0006a7;
-}
-
-.memo_item_title {
-  width: calc(100% - 43px);
-  height: auto;
-
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 34px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-
-  color: #000000;
-
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 1;
-}
-
-.memo_item_delete_button {
-  box-sizing: border-box;
-
-  width: 28px;
-  height: 28px;
-
-  transition: 1s;
-  background: #ffffff;
-  border: 3px solid #d0d0d0;
-  border-radius: 28px;
-
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-
-  position: relative;
-}
-
-.memo_item_delete_button:hover {
-  background: red;
-  border-color: white;
-  transition: 1s;
-}
-
-.memo_item_delete_button > .rectangle_1 {
-  position: absolute;
-  width: 12px;
-  height: 3px;
-  left: 5px;
-  top: 10.5px;
-
-  transition: 1s;
-  background: #d9d9d9;
-}
-
-.memo_item_delete_button:hover > .rectangle_1 {
-  background: white;
-  transition: 1s;
 }
 
 .memo {
@@ -329,30 +237,45 @@
   flex-grow: 1;
 }
 
-#memo_delete_button {
+.memo_item_delete_button {
   box-sizing: border-box;
 
-  width: 35px;
-  height: 35px;
+  width: 28px;
+  height: 28px;
 
+  transition: 1s;
   background: #ffffff;
   border: 3px solid #d0d0d0;
-  border-radius: 50px;
+  border-radius: 28px;
 
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
+
+  position: relative;
 }
 
-#memo_delete_button > .rectangle_1 {
-  position: absolute;
-  width: 15px;
-  height: 3px;
-  left: 10px;
-  top: 16px;
+.memo_item_delete_button:hover {
+  background: red;
+  border-color: white;
+  transition: 1s;
+}
 
+.memo_item_delete_button > .rectangle_1 {
+  position: absolute;
+  width: 12px;
+  height: 3px;
+  left: 5px;
+  top: 10.5px;
+
+  transition: 1s;
   background: #d9d9d9;
+}
+
+.memo_item_delete_button:hover > .rectangle_1 {
+  background: white;
+  transition: 1s;
 }
 
 .memo_content_outer {
