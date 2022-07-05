@@ -351,12 +351,16 @@
     display: none;
   }
 
+  .memo_hamburger_menu_body {
+    height: 7000px;
+  }
+
   .memo_list_in_hamburger_menu,
   .comannd_bar_in_hamburger_menu {
     display: flex;
   }
 
-  .memo_list_in_hamburger_menu {
-    height: 100%;
+  .memo_item_list_outer {
+    height: calc(100% - 80px);
   }
 }

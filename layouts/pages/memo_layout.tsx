@@ -58,8 +58,12 @@ function MemoLayout(): JSX.Element {
     </div>,
 
     //hamburger menu
-    <div id="memo_hamburger_menu_body">
+    <div
+      id="memo_hamburger_menu_body"
+      className={style.memo_hamburger_menu_body}
+    >
       <div
+        id="memo_hamburger_menu_comannd_bar"
         className={
           style.comannd_bar + " " + style.comannd_bar_in_hamburger_menu
         }
