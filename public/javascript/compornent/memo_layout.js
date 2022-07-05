@@ -173,6 +173,10 @@ function saveMemoItemList() {
   //TODO return URL
 }
 
-function showMemoSaveResultHamburgerMenu(url) {
-  //TODO
+function showMemoSaveResultHamburgerMenu(url = null) {
+  openHumburgerMenu(
+    "memo_save_result_hamburger_menu",
+    memoHumburgerMenuContainner
+  );
+  //TODO script
 }

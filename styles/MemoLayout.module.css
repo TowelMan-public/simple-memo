@@ -340,6 +340,7 @@
   display: none;
 }
 
+.memo_save_result_hamburger_menu,
 .memo_save_humburger_menu {
   display: flex;
   flex-direction: column;
@@ -354,6 +355,7 @@
   background: #ffffff;
 }
 
+.memo_save_result_hamburger_menu > .title,
 .memo_save_humburger_menu > .title {
   width: 100%;
   height: auto;
@@ -363,20 +365,13 @@
   font-weight: 400;
   font-size: 32px;
   line-height: 39px;
-  /* identical to box height */
 
   text-align: center;
 
   color: #000000;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
 }
 
+.memo_save_result_hamburger_menu > .text_outer,
 .memo_save_humburger_menu > .text_outer {
   /* Auto layout */
 
@@ -388,15 +383,9 @@
 
   width: 100%;
   height: auto;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
 }
 
+.memo_save_result_hamburger_menu > .text_outer > .text,
 .memo_save_humburger_menu > .text_outer > .text {
   width: 100%;
   height: auto;
@@ -408,12 +397,48 @@
   line-height: 31px;
 
   color: #000000;
+}
+
+.memo_save_result_hamburger_menu > .show_url {
+  width: 200px;
+  height: auto;
+}
+
+.memo_save_result_hamburger_menu > .show_url > .url_block {
+  width: 100%;
+  height: auto;
+
+  padding-left: 22px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: #000000;
+}
+
+.memo_save_result_hamburger_menu > .show_url > .title {
+  width: 100%;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+
+  text-align: left;
+
+  color: #000000;
 
   /* Inside auto layout */
 
   flex: none;
   order: 0;
-  flex-grow: 1;
+  flex-grow: 0;
 }
 
 .button_block {
@@ -426,13 +451,6 @@
 
   width: 100%;
   height: 51px;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 2;
-  align-self: stretch;
-  flex-grow: 0;
 }
 
 /*mobile mode*/
@@ -460,6 +478,7 @@
     padding-bottom: 200px;
   }
 
+  .memo_save_result_hamburger_menu > .title,
   .memo_save_humburger_menu > .title {
     font-family: "Inter";
     font-style: normal;
@@ -468,6 +487,7 @@
     line-height: 22px;
   }
 
+  .memo_save_result_hamburger_menu > .text_outer > .text,
   .memo_save_humburger_menu > .text_outer > .text {
     font-family: "Inter";
     font-style: normal;

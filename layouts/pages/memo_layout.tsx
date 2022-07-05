@@ -76,12 +76,41 @@ function MemoLayout(): JSX.Element {
             </Button.no>
           </div>
         </div>
+        <div
+          id="memo_save_result_hamburger_menu"
+          className={style.memo_save_result_hamburger_menu}
+        >
+          <div className={style.title}>メモの保存に成功しました</div>
+          <div className={style.text_outer}>
+            <div className={style.text}>
+              保存期間は2022年2月22日 22時22分22秒です。
+            </div>
+          </div>
+          <div
+            id="memo_save_result_hamburger_menu_show_url"
+            className={style.show_url}
+          >
+            <div className={style.title}>URL</div>
+            <div
+              id="memo_save_result_hamburger_menu_url_block"
+              className={style.url_block}
+            >
+              http://www.demo.demo/memo/id=demo1234567890wacfe32ed
+            </div>
+          </div>
+          <div className={style.button_block}>
+            <Button.yes id="memo_save_result_humburger_menu_yes_button">
+              閉じる
+            </Button.yes>
+          </div>
+        </div>
       </div>
 
       <Script src="/javascript/compornent/memo_layout.js"> </Script>
       <Script src="/javascript/page/memo_layout.js"> </Script>
       <Script src="/javascript/page/memo_hamburger_menu.js"> </Script>
       <Script src="/javascript/page/memo_save_humburger_menu.js"></Script>
+      <Script src="/javascript/page/memo_save_result_humburger_menu.js"></Script>
     </div>,
 
     //hamburger menu
