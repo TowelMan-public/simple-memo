@@ -5,7 +5,13 @@ const memoItemListOuterId = "memo_item_list_outer";
 jQuery(function () {
   $("#hamburger_menu_button").click(function () {
     $("#" + memoItemListId).appendTo("#" + humburgerMemoItemListOuterId);
-    resizeHumburgerMemoBody();
+    if (resizeHumburgerMemoBody() == -1) {
+      const timerId = setInterval(function () {
+        if (resizeHumburgerMemoBody() != -1) {
+          clearInterval(timerId);
+        }
+      }, 100);
+    }
     $("#hamburger_menu_close_button").click(function () {
       $("#" + memoItemListId).appendTo("#" + memoItemListOuterId);
     });
@@ -17,12 +23,24 @@ jQuery(function () {
 });
 
 function resizeHumburgerMemoBody() {
+  console.log("memo humb");
   $("#" + humburgerMenuBody).outerHeight(700000);
-  $("#" + humburgerMenuBody).outerHeight(
-    $("#default_hamburger_menu_content").innerHeight()
-  );
-  $("#" + humburgerMemoItemListOuterId).outerHeight(
-    $("#" + humburgerMenuBody).innerHeight() -
-      $("#memo_hamburger_menu_comannd_bar").outerHeight()
-  );
+  console.log($("#" + humburgerMenuBody).outerHeight());
+  console.log($("#default_hamburger_menu_content").innerHeight());
+  if ($("#default_hamburger_menu_content").innerHeight() == 0) {
+    return -1;
+  } else {
+    $("#" + humburgerMenuBody).outerHeight(
+      $("#default_hamburger_menu_content").innerHeight()
+    );
+    console.log(
+      $("#" + humburgerMenuBody).innerHeight() -
+        $("#memo_hamburger_menu_comannd_bar").outerHeight()
+    );
+    $("#" + humburgerMemoItemListOuterId).outerHeight(
+      $("#" + humburgerMenuBody).innerHeight() -
+        $("#memo_hamburger_menu_comannd_bar").outerHeight()
+    );
+    return 0;
+  }
 }
