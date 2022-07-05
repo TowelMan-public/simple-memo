@@ -6,8 +6,9 @@ jQuery(function () {
   $("#hamburger_menu_button").click(function () {
     $("#" + memoItemListId).appendTo("#" + humburgerMemoItemListOuterId);
     if (resizeHumburgerMemoBody() == -1) {
+      let count = 1;
       const timerId = setInterval(function () {
-        if (resizeHumburgerMemoBody() != -1) {
+        if (resizeHumburgerMemoBody() != -1 || ++count >= 6) {
           clearInterval(timerId);
         }
       }, 100);

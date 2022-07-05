@@ -9,6 +9,7 @@ function openHumburgerMenu(contentId, contentOuterId) {
       closeHumburgerMenu(contentId, contentOuterId);
     });
     $("#hamburger_menu").css("display", "flex");
+    isHamburgerMenuShowed.val(1);
   }
 }
 

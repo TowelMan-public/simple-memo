@@ -52,6 +52,32 @@ function MemoLayout(): JSX.Element {
           />
         </div>
       </div>
+      <div id="memo_layout_humburger_menu_containner" className="none">
+        <div
+          id="memo_save_humburger_menu"
+          className={style.memo_save_humburger_menu}
+        >
+          <div className={style.title}>
+            このメモの内容を一時的に保存しますか？
+          </div>
+          <div className={style.text_outer}>
+            <div className={style.text}>
+              ・メモの保存期間は一週です。
+              <br />
+              ・一度保存されたメモを開くと、その保存は破棄されます。
+            </div>
+          </div>
+          <div className={style.button_block}>
+            <Button.yes id="memo_save_humburger_menu_yes_button">
+              はい
+            </Button.yes>
+            <Button.no id="memo_save_humburger_menu_no_button">
+              いいえ
+            </Button.no>
+          </div>
+        </div>
+      </div>
+
       <Script src="/javascript/compornent/memo_layout.js"> </Script>
       <Script src="/javascript/page/memo_layout.js"> </Script>
       <Script src="/javascript/page/memo_hamburger_menu.js"> </Script>

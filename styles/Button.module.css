@@ -157,3 +157,13 @@
   font-size: 26px;
   line-height: 31px;
 }
+
+/*mobile mode*/
+@media (max-width: 767px) {
+  .yes_button > .text,
+  .no_button > .text {
+    font-weight: 200;
+    font-size: 15px;
+    line-height: 20px;
+  }
+}

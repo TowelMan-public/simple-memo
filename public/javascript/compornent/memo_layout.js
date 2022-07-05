@@ -2,6 +2,7 @@ const memoItemListId = "memo_item_list";
 const memoTitleBarTitleId = "memo_title_bar_title";
 const memoContentId = "memo_content";
 const emptyMemoItemId = "empty_memo_item";
+const memoHumburgerMenuContainner = "memo_layout_humburger_menu_containner";
 
 class MemoItemEntity {
   title; //string
@@ -164,7 +165,7 @@ function getMemoItemEntity(memoItemId) {
 }
 
 function showMemoSaveHamburgerMenu() {
-  ///TODO
+  openHumburgerMenu("memo_save_humburger_menu", memoHumburgerMenuContainner);
 }
 
 function saveMemoItemList() {
