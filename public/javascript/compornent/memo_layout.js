@@ -173,10 +173,15 @@ function saveMemoItemList() {
   //TODO return URL
 }
 
-function showMemoSaveResultHamburgerMenu(url = null) {
+function showMemoSaveResultHamburgerMenu(
+  url = "http://www.demo.demo/memo/id=demo1234567890wacfe32ed" /* TODO Date */
+) {
   openHumburgerMenu(
     "memo_save_result_hamburger_menu",
     memoHumburgerMenuContainner
   );
-  //TODO script
+  $("#memo_save_result_hamburger_menu_url_block").html(url);
+  $(window).resize();
+
+  //TODO script Date
 }
