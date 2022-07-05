@@ -81,6 +81,7 @@ function MemoLayout(): JSX.Element {
       <Script src="/javascript/compornent/memo_layout.js"> </Script>
       <Script src="/javascript/page/memo_layout.js"> </Script>
       <Script src="/javascript/page/memo_hamburger_menu.js"> </Script>
+      <Script src="/javascript/page/memo_save_humburger_menu.js"></Script>
     </div>,
 
     //hamburger menu
