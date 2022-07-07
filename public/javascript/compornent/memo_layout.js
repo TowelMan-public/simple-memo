@@ -35,7 +35,6 @@ function memoItemTitle(memoItemId, newTitle = null) {
   if (newTitle != null) {
     $("#" + id).html(newTitle);
   }
-  console.log("#" + id);
   return $("#" + id).html();
 }
 
@@ -89,7 +88,6 @@ function selectMemoItem(memoItemId = null) {
     }
   }
 
-  console.log("select " + id);
   selectedMemoItem(id);
   $("#" + memoTitleBarTitleId)
     .val(memoItemTitle(id))
@@ -115,7 +113,6 @@ function selectMemoItem(memoItemId = null) {
   $("#memo_title_bar_delete_button")
     .off("click")
     .click(function () {
-      console.log(id);
       getMemoItemDeleteButton(id).click();
     });
 }
@@ -138,7 +135,6 @@ function deleteMemoItem(memoItemId) {
 function memoTItleChangeEvent() {
   let title = $("#" + memoTitleBarTitleId);
   title.val(title.val().replace(/\r?\n/g, ""));
-  console.log(selectedMemoItem().attr("id"));
   memoItemTitle(selectedMemoItem().attr("id"), title.val());
   title.trigger("input");
 }
@@ -152,7 +148,7 @@ function getMemoItemEntityList() {
   $("#" + memoItemListId)
     .children("div")
     .each(function (index, item) {
-      entityList.push(getMemoItemEntity(item.attr("id")));
+      if (index != 0) entityList.push(getMemoItemEntity($(item).attr("id")));
     });
   return entityList;
 }

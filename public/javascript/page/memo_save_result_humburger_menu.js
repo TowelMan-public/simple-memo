@@ -11,12 +11,9 @@ jQuery(function () {
         .outerWidth($("#memo_save_result_hamburger_menu").innerWidth())
         .removeClass("none");
 
-      console.log(width !== undefined);
       if (width !== undefined) {
-        console.log("stop");
         clearInterval(timerId);
       }
-      console.log("redo");
     }, 100);
   });
 });

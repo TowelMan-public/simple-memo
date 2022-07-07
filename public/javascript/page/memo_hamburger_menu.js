@@ -24,19 +24,12 @@ jQuery(function () {
 });
 
 function resizeHumburgerMemoBody() {
-  console.log("memo humb");
   $("#" + humburgerMenuBody).outerHeight(700000);
-  console.log($("#" + humburgerMenuBody).outerHeight());
-  console.log($("#default_hamburger_menu_content").innerHeight());
   if ($("#default_hamburger_menu_content").innerHeight() == 0) {
     return -1;
   } else {
     $("#" + humburgerMenuBody).outerHeight(
       $("#default_hamburger_menu_content").innerHeight()
-    );
-    console.log(
-      $("#" + humburgerMenuBody).innerHeight() -
-        $("#memo_hamburger_menu_comannd_bar").outerHeight()
     );
     $("#" + humburgerMemoItemListOuterId).outerHeight(
       $("#" + humburgerMenuBody).innerHeight() -
