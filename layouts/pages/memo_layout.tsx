@@ -5,7 +5,7 @@ import Button from "../compornent/Button";
 import MemoItemList from "../compornent/MemoItemList";
 import BaseLayout from "./base_layout";
 
-function MemoLayout(): JSX.Element {
+function MemoLayout(script: JSX.Element | null = null): JSX.Element {
   return BaseLayout(
     //body
     <div className={style.body}>
@@ -35,9 +35,7 @@ function MemoLayout(): JSX.Element {
               id="memo_title_bar_title"
               className={style.memo_title_bar_title}
               maxlength="50"
-            >
-              title なんか長いタイトルにしたいんですけどどうですか？
-            </textarea>
+            />
             <div
               id="memo_title_bar_delete_button"
               className={style.memo_item_delete_button}
@@ -111,6 +109,7 @@ function MemoLayout(): JSX.Element {
       <Script src="/javascript/page/memo_hamburger_menu.js"> </Script>
       <Script src="/javascript/page/memo_save_humburger_menu.js"></Script>
       <Script src="/javascript/page/memo_save_result_humburger_menu.js"></Script>
+      {script}
     </div>,
 
     //hamburger menu
