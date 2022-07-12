@@ -2,7 +2,7 @@ import internal from "stream";
 import MemoEntity from "../entity/memo";
 import sqlQuery from "./connection";
 
-async function createMemoId(validityPeriod: Date): Promise<number> {
+export async function createMemoId(validityPeriod: Date): Promise<number> {
   let result = await sqlQuery(
     "INSERT INTO memo_list_owner (owner_validity_period) VALUES(?)",
     validityPeriod
@@ -11,7 +11,7 @@ async function createMemoId(validityPeriod: Date): Promise<number> {
   return result.inserttId as number;
 }
 
-async function insertMemoList(memoListOwnerId: number, memo: MemoEntity) {
+export async function insertMemo(memoListOwnerId: number, memo: MemoEntity) {
   await sqlQuery(
     "INSERT INTO memo (memo_list_owner_id, memo_title, memo_content) VALUES(?, ?, ?)",
     memoListOwnerId,
@@ -20,7 +20,7 @@ async function insertMemoList(memoListOwnerId: number, memo: MemoEntity) {
   );
 }
 
-async function validationMemoListId(
+export async function validationMemoListId(
   memoListOwnerId: number,
   nowDate: Date
 ): Promise<boolean> {
@@ -32,9 +32,11 @@ async function validationMemoListId(
   return result[0].period >= nowDate;
 }
 
-async function getMemoList(memoListOwnerId: number): Promise<MemoEntity[]> {
+export async function getMemoList(
+  memoListOwnerId: number
+): Promise<MemoEntity[]> {
   let result = await sqlQuery(
-    "SELECT memo_title AS title, memo_content AS content FROM memo WHERE memo_list_owner_id=? AND is_deleted=0",
+    "SELECT memo_title AS title, memo_content AS content FROM memo WHERE memo_list_owner_id=?",
     memoListOwnerId
   );
 
@@ -46,7 +48,7 @@ async function getMemoList(memoListOwnerId: number): Promise<MemoEntity[]> {
   return memoList;
 }
 
-async function deleteMemoList(memoListOwnerId: number) {
+export async function deleteMemoList(memoListOwnerId: number) {
   await sqlQuery(
     "UPDATE memo_list_owner SET is_deleted=1 WHERE memo_list_owner_id=?",
     memoListOwnerId
