@@ -2,7 +2,6 @@ USE simple-memo;
 
 CREATE TABLE memo_list_owner(
 	memo_list_owner_id INT PRIMARY KEY AUTO_INCREMENT,
-	memo_list_owner_token VARCHAR(100) UNIQUE,
 	owner_validity_period  DATETIME NOT NULL,
 	is_deleted TINYINT(1) DEFAULT 0
 );
@@ -10,7 +9,8 @@ CREATE TABLE memo_list_owner(
 CREATE TABLE memo(
 	memo_id INT PRIMARY KEY AUTO_INCREMENT,
 	memo_list_owner_id INT NOT NULL,
-	memo_text DATETIME NOT NULL,
+	memo_title VARCHAR(50) NOT NULL,
+	memo_content VARCHAR(2000) NOT NULL,
 
     CONSTRAINT fk_memo_list_owner_id_to_memo
 	    FOREIGN KEY (memo_list_owner_id) 
@@ -50,7 +50,6 @@ USE test;
 
 CREATE TABLE memo_list_owner(
 	memo_list_owner_id INT PRIMARY KEY AUTO_INCREMENT,
-	memo_list_owner_token VARCHAR(100) UNIQUE,
 	owner_validity_period  DATETIME NOT NULL,
 	is_deleted TINYINT(1) DEFAULT 0
 );
@@ -58,7 +57,8 @@ CREATE TABLE memo_list_owner(
 CREATE TABLE memo(
 	memo_id INT PRIMARY KEY AUTO_INCREMENT,
 	memo_list_owner_id INT NOT NULL,
-	memo_text DATETIME NOT NULL,
+	memo_title VARCHAR(50) NOT NULL,
+	memo_content VARCHAR(2000) NOT NULL,
 
     CONSTRAINT fk_memo_list_owner_id_to_memo
 	    FOREIGN KEY (memo_list_owner_id) 
