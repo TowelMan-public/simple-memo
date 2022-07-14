@@ -197,7 +197,7 @@ function showMemoSaveResultHamburgerMenu(id, period) {
     memoHumburgerMenuContainner
   );
   $("#memo_save_result_hamburger_menu_url_block").html(
-    "localhost:8080/load?id=" + id
+    location.protocol + location.host + "/load?id=" + id
   );
   $(window).resize();
 
