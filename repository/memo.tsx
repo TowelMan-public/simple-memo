@@ -26,12 +26,12 @@ export async function validationMemoListId(
 ): Promise<boolean> {
   let result = (
     await sqlQuery(
-      "SELECT owner_validity_period AS period FROM memo_list_owner WHERE memo_list_owner_id=? AND is_deleted=0",
+      "SELECT owner_validity_period AS period, is_deleted AS isDeleted FROM memo_list_owner WHERE memo_list_owner_id=?",
       memoListOwnerId
     )
   )[0];
 
-  return result[0].period >= nowDate;
+  return result[0].isDeleted == 0 && result[0].period >= nowDate;
 }
 
 export async function getMemoList(

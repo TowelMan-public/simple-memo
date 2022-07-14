@@ -31,7 +31,7 @@ export async function loadMemoList(
 ): Promise<MemoEntity[] | null> {
   if (await validationMemoListId(memoListOwnerId, new Date())) {
     let memoList = await getMemoList(memoListOwnerId);
-    deleteMemoList(memoListOwnerId); //not await
+    await deleteMemoList(memoListOwnerId); //not await
     return memoList;
   } else {
     return null;

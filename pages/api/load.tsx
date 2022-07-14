@@ -5,11 +5,12 @@ export default async (
   request: NextApiRequest,
   response: NextApiResponse<any>
 ) => {
-  if (request.method != "get") {
+  if (request.method != "POST") {
     response.status(400).send({});
+    return;
   }
 
-  let memoListId = Number.parseInt(request.query.id as string);
+  let memoListId = Number.parseInt(request.body.id as string);
 
   try {
     let memoList = await loadMemoList(memoListId);
@@ -17,7 +18,7 @@ export default async (
       response.status(404).send({});
     } else {
       let json = JSON.stringify(memoList);
-      response.status(200).json(json);
+      response.status(200).json({ body: json });
     }
   } catch {
     response.status(500).send({});

@@ -50,7 +50,7 @@ function memoItmeContent(memoItemId, newContent = null) {
   return $("#" + id).val();
 }
 
-function createNewMemoItem() {
+function createNewMemoItem(title = null, context = null) {
   let id = createNewMemoId();
   $("#" + emptyMemoItemId)
     .clone(true, false)
@@ -67,8 +67,11 @@ function createNewMemoItem() {
   $("#" + id + ">#" + emptyMemoItemId + "_title").attr("id", id + "_title");
   $("#" + id + ">#" + emptyMemoItemId + "_content").attr("id", id + "_content");
   memoItemCounterForNewId(1);
-  memoItemTitle(id, "メモ" + memoItemCounterForNewId());
-  memoItmeContent(id, "ここにメモの内容を入力してください。");
+  memoItemTitle(id, title == null ? "メモ" + memoItemCounterForNewId() : title);
+  memoItmeContent(
+    id,
+    context == null ? "ここにメモの内容を入力してください。" : context
+  );
   getMemoItemDeleteButton(id).click(function () {
     deleteMemoItem(id);
   });
@@ -165,6 +168,7 @@ function showMemoSaveHamburgerMenu() {
 }
 
 function saveMemoItemList() {
+  openProgressRing();
   let memoList = getMemoItemEntityList();
   jQuery
     .ajax({
@@ -177,13 +181,12 @@ function saveMemoItemList() {
       let period = new Date();
       period.setTime(body["period_time"]);
 
+      closeProgressRing();
       closeHumburgerMenu();
       showMemoSaveResultHamburgerMenu(id, period);
     })
-    .fail((body, textStatus, jqXHR) => {
-      /* TODO clean this memo confirm(
-        "あなたにその捜査権限がないため、その操作を行うことができないと思われます。"
-      );*/
+    .fail((jqXHR, textStatus, errorThrown) => {
+      closeProgressRing();
       showAjaxErrorHamburgerMenu();
     });
 }
