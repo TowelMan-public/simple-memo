@@ -10,6 +10,7 @@ jQuery(function () {
   $(
     "#memo_save_comannd_button, #hamburger_menu_memo_save_comannd_button"
   ).click(function () {
+    closeHumburgerMenu();
     showMemoSaveHamburgerMenu();
   });
 

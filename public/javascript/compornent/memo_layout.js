@@ -165,19 +165,53 @@ function showMemoSaveHamburgerMenu() {
 }
 
 function saveMemoItemList() {
-  //TODO
-  //TODO return URL
+  let memoList = getMemoItemEntityList();
+  jQuery
+    .ajax({
+      url: "/api/save",
+      type: "post",
+      data: { body: JSON.stringify(memoList) },
+    })
+    .done((body, textStatus, jqXHR) => {
+      let id = body["id"];
+      let period = new Date();
+      period.setTime(body["period_time"]);
+
+      closeHumburgerMenu();
+      showMemoSaveResultHamburgerMenu(id, period);
+    })
+    .fail((body, textStatus, jqXHR) => {
+      /* TODO clean this memo confirm(
+        "あなたにその捜査権限がないため、その操作を行うことができないと思われます。"
+      );*/
+      showAjaxErrorHamburgerMenu();
+    });
 }
 
-function showMemoSaveResultHamburgerMenu(
-  url = "http://www.demo.demo/memo/id=demo1234567890wacfe32ed" /* TODO Date */
-) {
+function showMemoSaveResultHamburgerMenu(id, period) {
   openHumburgerMenu(
     "memo_save_result_hamburger_menu",
     memoHumburgerMenuContainner
   );
-  $("#memo_save_result_hamburger_menu_url_block").html(url);
+  $("#memo_save_result_hamburger_menu_url_block").html(
+    "localhost:8080/load?id=" + id
+  );
   $(window).resize();
 
-  //TODO script Date
+  let datetest = new Date();
+  $("#memo_save_result_hamburger_menu_text_block").html(
+    "保存期間は" +
+      datetest.getFullYear() +
+      "年" +
+      datetest.getMonth() +
+      "月" +
+      datetest.getDate() +
+      "日 " +
+      datetest.getHours() +
+      "時" +
+      datetest.getMinutes() +
+      "分" +
+      datetest.getSeconds() +
+      "秒です。"
+  );
 }

@@ -1,6 +1,7 @@
 import MemoEntity from "../entity/memo";
 import {
   createMemoId,
+  deleteMemoList,
   getMemoList,
   insertMemo,
   validationMemoListId,
@@ -29,7 +30,9 @@ export async function loadMemoList(
   memoListOwnerId: number
 ): Promise<MemoEntity[] | null> {
   if (await validationMemoListId(memoListOwnerId, new Date())) {
-    return await getMemoList(memoListOwnerId);
+    let memoList = await getMemoList(memoListOwnerId);
+    deleteMemoList(memoListOwnerId); //not await
+    return memoList;
   } else {
     return null;
   }

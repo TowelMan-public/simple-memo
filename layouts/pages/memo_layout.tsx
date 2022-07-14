@@ -80,7 +80,10 @@ function MemoLayout(script: JSX.Element | null = null): JSX.Element {
         >
           <div className={style.title}>メモの保存に成功しました</div>
           <div className={style.text_outer}>
-            <div className={style.text}>
+            <div
+              id="memo_save_result_hamburger_menu_text_block"
+              className={style.text}
+            >
               保存期間は2022年2月22日 22時22分22秒です。
             </div>
           </div>
