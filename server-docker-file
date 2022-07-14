@@ -2,6 +2,8 @@ FROM node:14.17.0
 WORKDIR /app
 RUN npm install create-next-app &&\
     npm install next react react-dom &&\
-    npm i promise-mysql &&\
+    npm install mysql2 &&\
+    npm install --save-dev jest @testing-library/react @testing-library/jest-dom &&\
+    npm install jest-environment-jsdom &&\
     npm i -D @swc/cli @swc/core &&\
     npm install -D typescript @types/react @types/react-dom @types/node

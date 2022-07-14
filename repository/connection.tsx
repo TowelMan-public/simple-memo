@@ -1,16 +1,16 @@
-import * as mysql from "promise-mysql";
+import * as mysql from "mysql2/promise";
+import env from "../env";
 
-let m_connection: mysql.Connection | null = null;
+var m_connection: mysql.Connection | null = null;
 
-async function connection() {
+async function connection(): Promise<mysql.Connection> {
   if (m_connection == null) {
     m_connection = await mysql.createConnection({
-      host: process.env.MYSQL_HOST,
-      user: process.env.MYSQL_USER_NAME,
-      password: process.env.MYSQL_PASSWORD,
-      database: process.env.MYSQL_DB_NAME,
-      multipleStatements: true,
-      timezone: "jst",
+      host: env().MYSQL_HOST,
+      user: env().MYSQL_USER_NAME,
+      password: env().MYSQL_PASSWORD,
+      database: env().MYSQL_DB_NAME,
+      charset: "utf8",
     });
   }
 
@@ -18,7 +18,12 @@ async function connection() {
 }
 
 async function sqlQuery(sql: string, ...value: any): Promise<any> {
-  return (await connection()).query(sql, ...value);
+  try {
+    return await (await connection()).query(sql, [...value]);
+  } catch (error) {
+    console.log("around db error\n" + error);
+    throw error;
+  }
 }
 
 export default sqlQuery;

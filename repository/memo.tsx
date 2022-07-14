@@ -3,12 +3,12 @@ import MemoEntity from "../entity/memo";
 import sqlQuery from "./connection";
 
 export async function createMemoId(validityPeriod: Date): Promise<number> {
-  let result = await sqlQuery(
-    "INSERT INTO memo_list_owner (owner_validity_period) VALUES(?)",
-    validityPeriod
-  );
-
-  return result.inserttId as number;
+  return (
+    await sqlQuery(
+      "INSERT INTO memo_list_owner (owner_validity_period) VALUES(?)",
+      validityPeriod
+    )
+  )[0].insertId;
 }
 
 export async function insertMemo(memoListOwnerId: number, memo: MemoEntity) {
@@ -24,10 +24,12 @@ export async function validationMemoListId(
   memoListOwnerId: number,
   nowDate: Date
 ): Promise<boolean> {
-  let result = await sqlQuery(
-    "SELECT owner_validity_period AS period FROM memo_list_owner WHERE memo_list_owner_id=? AND is_deleted=0",
-    memoListOwnerId
-  );
+  let result = (
+    await sqlQuery(
+      "SELECT owner_validity_period AS period FROM memo_list_owner WHERE memo_list_owner_id=? AND is_deleted=0",
+      memoListOwnerId
+    )
+  )[0];
 
   return result[0].period >= nowDate;
 }
@@ -35,10 +37,12 @@ export async function validationMemoListId(
 export async function getMemoList(
   memoListOwnerId: number
 ): Promise<MemoEntity[]> {
-  let result = await sqlQuery(
-    "SELECT memo_title AS title, memo_content AS content FROM memo WHERE memo_list_owner_id=?",
-    memoListOwnerId
-  );
+  let result = (
+    await sqlQuery(
+      "SELECT memo_title AS title, memo_content AS content FROM memo WHERE memo_list_owner_id=?",
+      memoListOwnerId
+    )
+  )[0];
 
   let memoList: MemoEntity[] = [];
   result.forEach((object: any) => {
